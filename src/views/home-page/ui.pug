@@ -1,0 +1,13 @@
+html(lang="vi")
+  head
+    meta(http-equiv="content-type" content="text/html; charset=utf-8")
+    link(href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' type='text/css')
+    style !{css}
+  body
+    input(type="search", id="filter" placeholder='Tìm bài hát')
+    each chord in records
+      .i
+        a(href='/hop-am/' + chord[0] + '.htm')=chord[1] + ' - ' + chord[2] + ' - ' + chord[3]    
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+  script !{js}

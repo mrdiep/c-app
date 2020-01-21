@@ -1,0 +1,34 @@
+html *
+{
+   font-size: 1em !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+
+.hidden {
+    display: none;
+  }
+
+  .i {
+    border-bottom: 1px dashed #024144;
+    text-decoration: none;
+    line-height: 30px;
+    margin-left: 20px;
+  }
+    a {
+        text-decoration: none;
+    color: #024144!important;
+    font-size: 17px!important;
+    }
+#filter {
+    height: 50px;
+    border: 1px solid #ce0b2da6;
+    /* margin: auto!important; */
+    width: 95%;
+    margin: 30px;
+    font-size: 23px !important;
+    color: #86036f !important;
+    border-radius: 30px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}

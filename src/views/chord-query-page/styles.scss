@@ -1,0 +1,25 @@
+#visual-box-chords {
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    .jtab {
+        float: left;
+        .trans_ {
+            margin-left: 30px;
+            margin-right: 30px;
+            display: flex;
+            
+            .trans_space {
+                margin: auto;
+            }
+
+            i {
+                margin-top:5px;
+            }
+        }
+    }
+}
+
+html {
+    overflow: hidden;
+}

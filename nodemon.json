@@ -1,0 +1,6 @@
+{
+    "verbose": true,
+    "ignore": ["*.test.js", "fixtures/*"],
+    "delay": "2500",
+    "watch" : ["src/*"]
+  }

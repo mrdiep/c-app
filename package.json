@@ -1,0 +1,29 @@
+{
+  "name": "c-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-step-1": "babel-node src/step-1-downloaders/step-1-download-raw-data.js",
+    "start-step-1-raw-guitar": "babel-node src/step-1-downloaders/step-1-download-raw-guitar-tab.js",
+    "start-step-2": "babel-node src/step-2-clean-data.js",
+    "start-step-3": "babel-node src/step-3-render-html.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.17.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "lodash": "^4.17.10",
+    "lz-string": "^1.4.4",
+    "node-sass": "^4.9.0",
+    "pug": "^2.0.3",
+    "rimraf": "^2.6.2",
+    "sitemap-stream-parser": "^1.3.0"
+  }
+}

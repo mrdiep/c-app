@@ -1,0 +1,88 @@
+html(lang="vi")
+  head
+    meta(http-equiv="content-type" content="text/html; charset=utf-8")
+    each meta in metaProperties
+      ='\r\n'
+      meta(property=meta.property, content=meta.content)
+    each meta in metaNames
+      ='\r\n'
+      meta(name=meta.name, content=meta.content)
+    ='\r\n'
+    link(href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' type='text/css')
+    title=title + ' - ' + singers.join(', ') + ' - ' + authors.join(', ') + ' - Hợp âm guitar '
+    link(rel="shortcut icon",href="http://hopam.online/favicon.png")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css")
+    style !{css}
+  body(onload="devideCol(2);")
+    // page heading
+    .container-x.container-x-dark.p-y-md
+      .header-content
+        h1=title
+        h4.artists
+          span
+            i(class="material-icons")='mic'
+            =singers.join(', ')
+            ='   '
+            i(class="material-icons")='edit'
+            =authors.join(', ')
+        h4
+          span
+            i(class="material-icons")='music_note'
+            =chords.join(', ')
+    // page content + floating button
+    .container-x.p-y-md
+      .control
+        .btn-material
+        a(href='/')
+          i.material-icons.icon-material-search search
+
+    .content
+      #toolbox
+        .group-button
+          .label
+            label='TÔNG'
+          div
+            button.app-buton.f(onclick="changeAllTone(1);")='TĂNG'
+            button.app-buton(onclick="changeAllTone(0);")='HẠ'        
+        .group-button
+          .label
+            label='CỠ CHỮ'
+          div
+            button.app-buton.f(onclick="changeFontSize(2);")='TĂNG'
+            button.app-buton(onclick="changeFontSize(-2);")='GIẢM'      
+        .group-button
+          .label
+            label='KÍ HIỆU HỢP ÂM'
+          div
+            button.app-buton.f(onclick="combineChord(1);")='GỘP DÒNG'
+            button.app-buton(onclick="combineChord(0);")='TRÊN ĐẦU'      
+        .group-button
+          .label
+            label='CHIA CỘT'
+          div
+            button.app-buton.f(onclick="devideCol(1);")='KHÔNG CHIA'          
+            button.app-buton(onclick="devideCol(2);")='2'
+            button.app-buton(onclick="devideCol(3);")='3'
+            button.app-buton(onclick="devideCol(4);")='4'
+                  
+
+      .chord-content !{chordHtml}
+    // full screen form controls
+    i.icon-close.material-icons close
+    .search-input
+      input.input-search(placeholder="Tìm bài hát" type="text")
+  #fb-root
+  .row
+    .col-sm-4
+      .fb-comments(data-href='http://hopam.online/hop-am/'+fileName.split('.')[0] + '.htm', data-numposts='20', data-mobile="1")
+    .col-sm-8
+      iframe(src="http://hopam.online/chord-viewer.htm?chord="+chords.join(','))
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+  script !{js}
+  script(src="https://www.googletagmanager.com/gtag/js?id=UA-55119634-7", async)
+  script
+      ='window.dataLayer = window.dataLayer || [];'
+      ='function gtag(){dataLayer.push(arguments);}'
+      ="gtag('js', new Date());"
+      ="gtag('config', 'UA-55119634-7');"
